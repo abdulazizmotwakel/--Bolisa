@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Bolisa">
+<meta name="theme-color" content="#0b6e69">
+<title>بوليصة | Bolisa</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e9edf1;--card:#fff;--ink:#14212e;--mut:#5d6b78;--line:#cfd7de;--acc:#0b6e69;--acc2:#e8a317;--inp:#f6f8fa;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f171f;--card:#18232d;--ink:#e8eef3;--mut:#93a3b1;--line:#2c3b48;--acc:#3cc2b8;--inp:#111b24}}
+:root[data-theme="dark"]{--bg:#0f171f;--card:#18232d;--ink:#e8eef3;--mut:#93a3b1;--line:#2c3b48;--acc:#3cc2b8;--inp:#111b24}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Tajawal',Tahoma,Arial,sans-serif;font-size:15px;line-height:1.6}
+body[dir=ltr]{font-family:'Tajawal',system-ui,Arial,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;border-bottom:4px solid var(--acc2);background:var(--card);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px}
+.brand svg,.brand img{width:38px;height:38px;border-radius:8px;object-fit:contain}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+button,.btn{font:inherit;font-weight:700;border:1px solid var(--line);background:var(--inp);color:var(--ink);padding:8px 14px;border-radius:6px;cursor:pointer}
+button.on,.pri{background:var(--acc);color:#fff;border-color:var(--acc)}
+.ghost{background:transparent}
+:focus-visible{outline:3px solid var(--acc2);outline-offset:1px}
+.hide{display:none!important}
+.wrap{max-width:1280px;margin:auto;padding:16px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:28px 0}
+@media (max-width:900px){.hero,main{grid-template-columns:1fr!important}}
+.hero h1{font-size:34px;line-height:1.25;margin:0 0 10px;font-weight:800}
+.hero p{color:var(--mut);max-width:60ch}
+.big{width:84px;height:84px;margin-bottom:12px}
+.pill{display:inline-block;background:var(--acc2);color:#14212e;font-weight:800;padding:2px 12px;border-radius:99px;font-size:13px;margin-bottom:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+.card h2{margin:0 0 10px;font-size:18px;color:var(--acc)}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.feat div{border-inline-start:4px solid var(--acc2);padding:4px 12px}
+.feat b{display:block}
+.feat span{color:var(--mut);font-size:14px}
+.row2{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+fieldset{border:1px solid var(--line);background:var(--card);border-radius:8px;margin:0 0 14px;padding:12px 14px 14px}
+legend{font-weight:800;padding:0 8px;color:var(--acc)}
+.g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.g .w{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:500;color:var(--mut)}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--inp);border:1px solid var(--line);border-radius:6px;padding:8px 10px;margin-top:3px}
+textarea{resize:vertical;min-height:60px}
+main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.auth{max-width:440px}
+.lg{width:70px;height:70px;object-fit:contain;border:1px solid var(--line);border-radius:8px;background:#fff;display:block;margin:6px 0}
+.err{color:#c0392b;font-weight:700;min-height:22px}
+.sheet{background:#fff;color:#14212e;border:2px solid #14212e;border-radius:4px;padding:16px;font-size:13px}
+.sh{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;border-bottom:3px solid #14212e;padding-bottom:10px;margin-bottom:10px}
+.sh h2{margin:0;font-size:21px;font-weight:800}
+.sh small{display:block;color:#5d6b78;font-weight:500}
+.co{display:flex;gap:10px;align-items:center}
+.co img{width:54px;height:54px;object-fit:contain}
+.no{text-align:end;direction:ltr}
+.no b{font-size:18px;display:block}
+.bc{height:34px;width:150px;display:block;margin-top:4px;margin-inline-start:auto}
+.r2{display:grid;grid-template-columns:1fr 1fr;border:1px solid #14212e;margin-bottom:8px}
+.r2>div{padding:7px 9px;min-height:60px}
+.r2>div+div{border-inline-start:1px solid #14212e}
+.r2 h3{margin:0 0 3px;font-size:12px;font-weight:800;color:#0b6e69}
+.r2 p{margin:0;word-break:break-word}
+.route{border:1px solid #14212e;margin-bottom:8px}
+.route .r{display:grid;grid-template-columns:90px 1fr;border-bottom:1px solid #14212e}
+.route .r:last-child{border:0}
+.route .r b{background:#eef2f5;padding:7px 9px;border-inline-end:1px solid #14212e}
+.route .r span{padding:7px 9px;word-break:break-word}
+table{width:100%;border-collapse:collapse;margin-bottom:8px}
+th,td{border:1px solid #14212e;padding:6px 8px;text-align:start}
+th{background:#eef2f5}
+.notes{border:1px dashed #5d6b78;padding:7px 9px;min-height:40px}
+.sig{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.sig div{border-top:1px solid #14212e;padding-top:4px;text-align:center;font-weight:700;font-size:12px}
+.item{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-bottom:8px}
+.item small{color:var(--mut);display:block}
+.empty{text-align:center;color:var(--mut);padding:40px 10px}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:20px}
+#toast{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:6px;font-weight:700}
+@media print{body{background:#fff}header,.form,.row2,footer,#toast,#land,#app>.tabpane:not(#pNew){display:none!important}main{display:block}.wrap{padding:0}@page{margin:10mm}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><symbol id="lg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b6e69"/><rect x="12" y="14" width="26" height="30" rx="3" fill="#fff"/><path d="M17 22h16M17 28h16M17 34h10" stroke="#0b6e69" stroke-width="3" stroke-linecap="round"/><path d="M38 28h10l6 8v9H38z" fill="#e8a317"/><circle cx="26" cy="48" r="5" fill="#14212e" stroke="#fff" stroke-width="2"/><circle cx="46" cy="48" r="5" fill="#14212e" stroke="#fff" stroke-width="2"/></symbol></svg>
+
+<header>
+ <div class="brand"><svg><use href="#lg"/></svg><span id="bn"></span></div>
+ <div class="tabs">
+  <nav class="tabs hide" id="nav"></nav>
+  <button onclick="setLang(L?0:1)" id="lb"></button>
+  <button class="hide pri" id="inst" onclick="install()" data-i="install"></button>
+ </div>
+</header>
+
+<!-- landing -->
+<div id="land" class="wrap hide">
+ <section class="hero">
+  <div>
+   <span class="pill" data-i="free"></span>
+   <svg class="big"><use href="#lg"/></svg>
+   <h1 data-i="h1"></h1>
+   <p data-i="about"></p>
+  </div>
+  <div class="card auth">
+   <div class="row2"><button id="a1" class="on" onclick="authTab(1)" data-i="reg"></button><button id="a2" onclick="authTab(2)" data-i="login"></button></div>
+   <form id="af" onsubmit="return false">
+    <label class="r"><span data-i="co"></span><input name="co"></label>
+    <label><span data-i="email"></span><input name="email" type="email" dir="ltr" required></label>
+    <label><span data-i="phone"></span><input name="phone" type="tel" dir="ltr" required></label>
+    <label class="r"><span data-i="logo"></span><input name="logo" type="file" accept="image/*" onchange="pickLogo(this)"></label>
+    <img class="lg hide" id="lp" alt="">
+    <div class="err" id="err"></div>
+    <button class="pri" style="width:100%" onclick="doAuth()" id="ab"></button>
+    <p style="font-size:12px;color:var(--mut)" data-i="authnote"></p>
+   </form>
+  </div>
+ </section>
+ <div class="card"><h2 data-i="feats"></h2><div class="feat" id="feat"></div></div>
+ <div class="card"><h2 data-i="mob"></h2><p data-i="mobt" style="margin:0"></p></div>
+</div>
+
+<!-- app -->
+<div id="app" class="wrap hide">
+ <div id="pNew" class="tabpane"><main>
+  <form class="form" id="f" onsubmit="return false"></form>
+  <section>
+   <div class="row2"><button class="pri" onclick="save()" data-i="save"></button><button onclick="window.print()" data-i="print"></button><button class="ghost" onclick="reset()" data-i="new"></button></div>
+   <div class="sheet" id="sheet"></div>
+  </section>
+ </main></div>
+ <div id="pHist" class="tabpane hide"></div>
+ <div id="pProf" class="tabpane hide"><div class="card auth">
+  <h2 data-i="prof"></h2>
+  <form id="pf" onsubmit="return false">
+   <label><span data-i="co"></span><input name="co"></label>
+   <label><span data-i="email"></span><input name="email" type="email" dir="ltr"></label>
+   <label><span data-i="phone"></span><input name="phone" type="tel" dir="ltr"></label>
+   <label><span data-i="dterms"></span><textarea name="terms" rows="4"></textarea></label>
+   <label><span data-i="logo"></span><input type="file" accept="image/*" onchange="pickLogo(this,1)"></label>
+   <img class="lg" id="pl" alt="">
+   <div class="err" id="perr"></div>
+   <div class="row2"><button class="pri" onclick="saveProf()" data-i="saveprof"></button><button onclick="logout()" data-i="logout"></button></div>
+  </form></div></div>
+ <div id="pHelp" class="tabpane hide"><div class="card auth"><h2 data-i="sup"></h2><p data-i="supt"></p>
+  <p><a href="tel:+966545770127" dir="ltr">+966 54 577 0127</a><br><a href="https://wa.me/966545770127" dir="ltr">WhatsApp</a><br><a href="mailto:abdulazizmotwakel@gmail.com" dir="ltr">abdulazizmotwakel@gmail.com</a></p></div></div>
+</div>
+
+<footer><span data-i="foot"></span> · <a href="tel:+966545770127" dir="ltr">+966545770127</a> · <a href="mailto:abdulazizmotwakel@gmail.com">abdulazizmotwakel@gmail.com</a></footer>
+<div id="toast" class="hide"></div>
+
+<script>
+var L=0,D={
+free:['مجاني بالكامل','Completely free'],
+h1:['أصدر بوليصة شحن احترافية في دقائق','Issue a professional waybill in minutes'],
+about:['«بوليصة» تطبيق مجاني يساعد شركات الشحن والنقل على إنشاء بوليصات شحن كاملة: بيانات العميل والمستلم وشركة النقل والسائق وموقعي التحميل والتنزيل وتسعير الرحلة والشحنة بالريال أو الدولار، مع شعار شركتك وطباعة أو حفظ PDF بلغتين عربية وإنجليزية.','Bolisa is a free app that helps shipping and trucking companies create complete waybills: customer, consignee, carrier and driver details, loading and unloading locations, and trip and shipment pricing in SAR or USD, with your company logo, print or PDF, in Arabic and English.'],
+feats:['ماذا يقدّم التطبيق','What you get'],
+f1:['بيانات الشحنة كاملة','Complete shipment data'],f1d:['العميل، المستلم، شركة النقل، السائق والمركبة.','Customer, consignee, carrier, driver and truck.'],
+f2:['موقع التحميل والتنزيل','Loading and unloading'],f2d:['المدينة والعنوان والموعد ورابط الخريطة.','City, address, schedule and map link.'],
+f3:['تسعير بالريال أو الدولار','Pricing in SAR or USD'],f3d:['أجرة الرحلة وسعر الشحنة والإجمالي.','Trip fare, shipment price and total.'],
+f4:['شعار شركتك','Your company logo'],f4d:['ارفعه مرة واحدة عند التسجيل ويظهر على كل بوليصة.','Upload once at sign-up; it appears on every waybill.'],
+mob:['افتحه على جوالك','Open it on your phone'],
+mobt:['أندرويد: افتح الرابط في Chrome ثم القائمة ⋮ ثم «إضافة إلى الشاشة الرئيسية». آيفون: افتح الرابط في Safari ثم زر المشاركة ثم «إضافة إلى الشاشة الرئيسية». سيظهر كتطبيق بأيقونة خاصة.','Android: open the link in Chrome, tap the ⋮ menu, then "Add to Home screen". iPhone: open in Safari, tap Share, then "Add to Home Screen". It opens like an app with its own icon.'],
+install:['تثبيت التطبيق','Install app'],
+reg:['حساب جديد','Sign up'],login:['تسجيل الدخول','Log in'],
+co:['اسم شركة الشحن','Shipping company name'],email:['البريد الإلكتروني','Email'],phone:['رقم الجوال','Phone number'],logo:['شعار الشركة (مرة واحدة)','Company logo (once)'],
+authnote:['الحساب محفوظ على جهازك فقط، والدخول بالبريد ورقم الجوال.','Your account is stored on this device only; sign in with email and phone.'],
+e1:['أدخل بريداً صحيحاً ورقم جوال.','Enter a valid email and phone number.'],e2:['أدخل اسم الشركة.','Enter the company name.'],e3:['لا يوجد حساب بهذه البيانات.','No account matches these details.'],
+tNew:['بوليصة جديدة','New waybill'],tHist:['السجل','History'],tProf:['حسابي','Account'],tHelp:['الدعم','Support'],
+save:['حفظ البوليصة','Save waybill'],print:['طباعة / PDF','Print / PDF'],new:['جديدة','New'],
+saved:['تم الحفظ','Saved'],needno:['أدخل رقم البوليصة','Enter waybill number'],
+prof:['المعلومات الشخصية','Personal information'],saveprof:['حفظ التعديلات','Save changes'],logout:['تسجيل الخروج','Log out'],
+sup:['الدعم والاستفسار','Support and inquiries'],supt:['للدعم أو الاستفسار تواصل معي مباشرة:','For support or questions, contact me directly:'],
+foot:['تطبيق بوليصة مجاني','Bolisa is free'],
+open:['فتح','Open'],del:['حذف','Delete'],noh:['لا توجد بوليصات محفوظة بعد.','No saved waybills yet.'],
+sShp:['بيانات الشحنة','Shipment'],sCus:['العميل (المرسل)','Customer (shipper)'],sRec:['المستلم','Consignee'],sCar:['شركة النقل','Carrier'],sLoad:['موقع التحميل','Loading location'],sUnl:['موقع التنزيل','Unloading location'],sGd:['البضاعة','Cargo'],sPr:['التسعير','Pricing'],
+no:['رقم البوليصة','Waybill no.'],date:['تاريخ الإصدار','Issue date'],type:['نوع الشحنة','Shipment type'],pay:['طريقة الدفع','Payment'],
+cn:['الاسم / الشركة','Name / company'],cp:['الجوال','Phone'],cv:['الرقم الضريبي','Tax / CR no.'],ce:['البريد','Email'],
+kn:['شركة الشحن / التوصيل','Shipping / delivery company'],kp:['رقم التواصل','Contact'],dn:['السائق','Driver'],dp:['جوال السائق','Driver phone'],pl:['رقم اللوحة','Plate no.'],tt:['نوع الشاحنة','Truck type'],
+city:['المدينة','City'],addr:['العنوان التفصيلي','Address'],map:['رابط الخريطة','Map link'],ldt:['موعد التحميل','Loading time'],udt:['موعد التسليم','Delivery time'],
+gd:['وصف البضاعة','Description'],gq:['عدد الطرود','Packages'],gw:['الوزن (كجم)','Weight (kg)'],
+cur:['العملة','Currency'],fr:['أجرة الرحلة','Trip fare'],gv:['سعر الشحنة','Shipment price'],tot:['الإجمالي','Total'],nt:['ملاحظات','Notes'],
+SAR:['ريال سعودي (SAR)','Saudi riyal (SAR)'],USD:['دولار أمريكي (USD)','US dollar (USD)'],
+t0:['بضائع عامة','General cargo'],t1:['مبردة','Refrigerated'],t2:['حاويات','Containers'],t3:['خطرة','Hazardous'],t4:['ثقيلة','Heavy'],
+p0:['مدفوعة مسبقاً','Prepaid'],p1:['الدفع عند التسليم','Cash on delivery'],p2:['آجل','Credit'],
+k0:['تريلا','Trailer'],k1:['دينا','Dyna'],k2:['سطحة','Flatbed'],k3:['ثلاجة','Reefer'],k4:['صهريج','Tanker'],k5:['وانيت','Pickup'],
+wb:['بوليصة شحن','Waybill'],tload:['التحميل','Loading'],tunl:['التنزيل','Unloading'],cargo:['البضاعة','Cargo'],drv:['السائق والمركبة','Driver & truck'],
+sg1:['توقيع المرسل','Shipper'],sg2:['توقيع السائق','Driver'],sg3:['توقيع المستلم','Consignee'],at:['الموعد','Time'],
+bn:['بوليصة','Bolisa'],inc:['إضافة الشروط والأحكام للبوليصة (اختياري)','Include terms & conditions (optional)'],terms:['الشروط والأحكام','Terms & conditions'],dterms:['الشروط والأحكام الافتراضية (اختياري)','Default terms & conditions (optional)'],Y0:['لا','No'],Y1:['نعم','Yes']};
+function t(k){return D[k]?D[k][L]:k}
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function or(s){return s?esc(s):'—'}
+function ld(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));return 1}catch(e){return 0}}
+function toast(m){var e=$('toast');e.textContent=m;e.classList.remove('hide');setTimeout(function(){e.classList.add('hide')},1800)}
+var user=ld('wb_user',null),inn=ld('wb_in',0),pend='',mode=1,cur=null;
+
+/* form spec: [sectionKey,[[name,labelKey,type,wide]]] */
+var SPEC=[['sShp',[['no','no'],['date','date','date'],['type','type','s:t:5'],['pay','pay','s:p:3']]],
+['sCus',[['cn','cn'],['cp','cp','tel'],['cv','cv'],['ce','ce','email']]],
+['sRec',[['rn','cn'],['rp','cp','tel']]],
+['sCar',[['kn','kn'],['kp','kp','tel'],['dn','dn'],['dp','dp','tel'],['pl','pl'],['tt','tt','s:k:6']]],
+['sLoad',[['lc','city'],['ld','ldt','datetime-local'],['la','addr','text',1],['lm','map','text',1]]],
+['sUnl',[['uc','city'],['ud','udt','datetime-local'],['ua','addr','text',1],['um','map','text',1]]],
+['sGd',[['gd','gd','text',1],['gq','gq','number'],['gw','gw','number']]],
+['sPr',[['cur','cur','s:C:2'],['fr','fr','number'],['gv','gv','number'],['nt','nt','area',1],['inc','inc','s:Y:2',1],['tm','terms','area',1]]]];
+function buildForm(){
+ var old={};for(var i=0;i<F().elements.length;i++){var e=F().elements[i];if(e.name)old[e.name]=e.value}
+ var h='';SPEC.forEach(function(s){h+='<fieldset><legend>'+t(s[0])+'</legend><div class="g">';
+  s[1].forEach(function(f){var n=f[0],ty=f[2]||'text',w=f[3]?' class="w"':'';h+='<label'+w+'>'+t(f[1]);
+   if(ty.indexOf('s:')==0){var p=ty.split(':'),o='';for(var j=0;j<+p[2];j++){var k=p[1]=='C'?['SAR','USD'][j]:p[1]+j;o+='<option value="'+j+'">'+t(k)+'</option>'}h+='<select name="'+n+'">'+o+'</select>'}
+   else if(ty=='area')h+='<textarea name="'+n+'"></textarea>';
+   else h+='<input name="'+n+'" type="'+ty+'"'+(['tel','email'].indexOf(ty)>-1||n=='lm'||n=='um'?' dir="ltr"':'')+'>';
+   h+='</label>'});h+='</div></fieldset>'});
+ F().innerHTML=h;for(var k in old){if(F().elements[k])F().elements[k].value=old[k]}
+}
+function F(){return $('f')}
+function v(n){return F().elements[n].value.trim()}
+function money(n,c){n=+n||0;try{return new Intl.NumberFormat(L?'en-US':'ar-SA',{style:'currency',currency:c}).format(n)}catch(e){return n+' '+c}}
+function dt(s){if(!s)return '—';var d=new Date(s);return isNaN(d)?'—':d.toLocaleString(L?'en-GB':'ar-SA',{dateStyle:'medium',timeStyle:s.length>10?'short':undefined})}
+function bars(s){var x=0,o='';for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);for(var j=0;j<3;j++){var w=((c>>j)&3)+1;if((i+j)%2==0)o+='<rect x="'+x+'" y="0" width="'+w+'" height="34"/>';x+=w+1}}return '<svg class="bc" viewBox="0 0 '+Math.max(x,1)+' 34" preserveAspectRatio="none" fill="#14212e">'+o+'</svg>'}
+function render(){
+ if(!user||!F().elements.no)return;
+ var c=['SAR','USD'][+v('cur')||0],no=v('no')||'—',tot=(+v('fr')||0)+(+v('gv')||0);
+ var mp=function(u){return /^https?:\/\//.test(u)?'<br><span dir="ltr">'+esc(u)+'</span>':''};
+ $('sheet').innerHTML='<div class="sh"><div class="co">'+(user.logo?'<img src="'+user.logo+'" alt="">':'')+'<div><h2>'+t('wb')+'</h2><small>'+esc(user.co)+' · '+esc(user.phone)+'</small></div></div><div class="no"><b>'+esc(no)+'</b>'+bars(no)+'<small>'+dt(v('date'))+'</small></div></div>'+
+ '<div class="r2"><div><h3>'+t('sCus')+'</h3><p><b>'+or(v('cn'))+'</b><br>'+or(v('cp'))+(v('cv')?'<br>'+esc(v('cv')):'')+(v('ce')?'<br>'+esc(v('ce')):'')+'</p></div><div><h3>'+t('sRec')+'</h3><p><b>'+or(v('rn'))+'</b><br>'+or(v('rp'))+'</p></div></div>'+
+ '<div class="r2"><div><h3>'+t('sCar')+'</h3><p><b>'+or(v('kn')||user.co)+'</b><br>'+or(v('kp'))+'</p></div><div><h3>'+t('drv')+'</h3><p><b>'+or(v('dn'))+'</b> '+esc(v('dp'))+'<br>'+t('k'+v('tt'))+' · '+t('pl')+': '+or(v('pl'))+'</p></div></div>'+
+ '<div class="route"><div class="r"><b>'+t('tload')+'</b><span>'+or(v('lc'))+' — '+or(v('la'))+mp(v('lm'))+'<br>'+t('at')+': '+dt(v('ld'))+'</span></div><div class="r"><b>'+t('tunl')+'</b><span>'+or(v('uc'))+' — '+or(v('ua'))+mp(v('um'))+'<br>'+t('at')+': '+dt(v('ud'))+'</span></div></div>'+
+ '<table><tr><th>'+t('cargo')+'</th><th>'+t('type')+'</th><th>'+t('gq')+'</th><th>'+t('gw')+'</th></tr><tr><td>'+or(v('gd'))+'</td><td>'+t('t'+v('type'))+'</td><td>'+or(v('gq'))+'</td><td>'+or(v('gw'))+'</td></tr></table>'+
+ '<table><tr><th>'+t('fr')+'</th><th>'+t('gv')+'</th><th>'+t('tot')+'</th><th>'+t('pay')+'</th></tr><tr><td>'+money(v('fr'),c)+'</td><td>'+money(v('gv'),c)+'</td><td><b>'+money(tot,c)+'</b></td><td>'+t('p'+v('pay'))+'</td></tr></table>'+
+ '<div class="notes"><b>'+t('nt')+':</b> '+or(v('nt'))+'</div>'+(v('inc')=='1'&&v('tm')?'<div class="notes" style="margin-top:8px;font-size:11px;white-space:pre-line"><b>'+t('terms')+':</b> '+esc(v('tm'))+'</div>':'')+'<div class="sig"><div>'+t('sg1')+'</div><div>'+t('sg2')+'</div><div>'+t('sg3')+'</div></div>';
+}
+function nextNo(){return 'WB-'+new Date().getFullYear()+'-'+String(ld('wb_list',[]).length+1).padStart(4,'0')}
+function reset(){F().reset();F().elements.date.value=new Date().toISOString().slice(0,10);F().elements.no.value=nextNo();F().elements.kn.value=user?user.co:'';F().elements.kp.value=user?user.phone:'';F().elements.tm.value=user&&user.terms?user.terms:'';F().elements.inc.value=user&&user.terms?1:0;render()}
+function save(){if(!v('no')){toast(t('needno'));return}var a=ld('wb_list',[]),d={};for(var i=0;i<F().elements.length;i++){var e=F().elements[i];if(e.name)d[e.name]=e.value}
+ var i2=a.findIndex(function(x){return x.no===d.no});if(i2>=0)a[i2]=d;else a.unshift(d);sv('wb_list',a);toast(t('saved'))}
+function hist(){var a=ld('wb_list',[]),h=$('pHist');if(!a.length){h.innerHTML='<div class="empty">'+t('noh')+'</div>';return}
+ h.innerHTML=a.map(function(o,i){return '<div class="item"><div><b dir="ltr">'+esc(o.no)+'</b><small>'+esc(o.cn||'—')+' → '+esc(o.rn||'—')+' · '+esc(o.lc||'—')+' → '+esc(o.uc||'—')+'</small></div><div class="row2" style="margin:0"><button onclick="openW('+i+')">'+t('open')+'</button><button class="ghost" onclick="delW('+i+')">'+t('del')+'</button></div></div>'}).join('')}
+function openW(i){var o=ld('wb_list',[])[i];for(var k in o){if(F().elements[k])F().elements[k].value=o[k]}render();tabTo('pNew')}
+function delW(i){var a=ld('wb_list',[]);a.splice(i,1);sv('wb_list',a);hist()}
+
+/* logo: downscale to keep storage small */
+function pickLogo(inp,prof){var f=inp.files[0];if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var s=Math.min(1,200/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);pend=c.toDataURL('image/png');var p=$(prof?'pl':'lp');p.src=pend;p.classList.remove('hide')};im.src=r.result};r.readAsDataURL(f)}
+function authTab(m){mode=m;$('a1').classList.toggle('on',m==1);$('a2').classList.toggle('on',m==2);document.querySelectorAll('#af .r').forEach(function(e){e.classList.toggle('hide',m==2)});$('lp').classList.toggle('hide',m==2||!pend);$('ab').textContent=t(m==1?'reg':'login');$('err').textContent=''}
+function doAuth(){var f=$('af').elements,em=f.email.value.trim().toLowerCase(),ph=f.phone.value.trim();
+ if(!/^\S+@\S+\.\S+$/.test(em)||ph.replace(/\D/g,'').length<8){$('err').textContent=t('e1');return}
+ if(mode==1){if(!f.co.value.trim()){$('err').textContent=t('e2');return}user={co:f.co.value.trim(),email:em,phone:ph,logo:pend};sv('wb_user',user)}
+ else if(!user||user.email!==em||user.phone.replace(/\D/g,'')!==ph.replace(/\D/g,'')){$('err').textContent=t('e3');return}
+ sv('wb_in',1);inn=1;route()}
+function saveProf(){var f=$('pf').elements,em=f.email.value.trim().toLowerCase();
+ if(!f.co.value.trim()||!/^\S+@\S+\.\S+$/.test(em)||f.phone.value.replace(/\D/g,'').length<8){$('perr').textContent=t('e1');return}
+ user={co:f.co.value.trim(),email:em,phone:f.phone.value.trim(),logo:pend||user.logo,terms:f.terms.value.trim()};pend='';sv('wb_user',user);$('perr').textContent='';toast(t('saved'));render()}
+function logout(){inn=0;sv('wb_in',0);route()}
+
+function tabTo(id){['pNew','pHist','pProf','pHelp'].forEach(function(p){$(p).classList.toggle('hide',p!==id)});
+ document.querySelectorAll('#nav button').forEach(function(b){b.classList.toggle('on',b.dataset.p===id)});
+ if(id=='pHist')hist();if(id=='pProf'){var f=$('pf').elements;f.co.value=user.co;f.email.value=user.email;f.phone.value=user.phone;f.terms.value=user.terms||'';$('pl').src=user.logo||'';$('pl').classList.toggle('hide',!user.logo);pend=''}}
+function route(keep){var on=user&&inn;$('land').classList.toggle('hide',!!on);$('app').classList.toggle('hide',!on);$('nav').classList.toggle('hide',!on);
+ if(on){buildNav();buildForm();if(!keep){reset();tabTo('pNew')}else render()}else authTab(user?2:1);var h=$('bn');h.textContent=on?user.co:t('bn');
+ var b=document.querySelector('.brand');var old=b.querySelector('img');if(old)old.remove();if(on&&user.logo){var im=new Image();im.src=user.logo;b.replaceChild(im,b.querySelector('svg'))}else if(!b.querySelector('svg')){b.innerHTML='<svg><use href="#lg"/></svg><span id="bn">'+t('bn')+'</span>'}}
+function buildNav(){$('nav').innerHTML=[['pNew','tNew'],['pHist','tHist'],['pProf','tProf'],['pHelp','tHelp']].map(function(x){return '<button data-p="'+x[0]+'" onclick="tabTo(\''+x[0]+'\')">'+t(x[1])+'</button>'}).join('')}
+function setLang(l){L=l;sv('wb_lang',l);document.documentElement.lang=l?'en':'ar';document.documentElement.dir=document.body.dir=l?'ltr':'rtl';
+ $('lb').textContent=l?'العربية':'English';document.title=l?'Bolisa | بوليصة':'بوليصة | Bolisa';
+ document.querySelectorAll('[data-i]').forEach(function(e){e.textContent=t(e.dataset.i)});
+ $('feat').innerHTML=[1,2,3,4].map(function(i){return '<div><b>'+t('f'+i)+'</b><span>'+t('f'+i+'d')+'</span></div>'}).join('');
+ var p=document.querySelector('#nav button.on'),k=!!(p&&inn&&user);route(k);if(k)tabTo(p.dataset.p);$('ab').textContent=t(mode==1?'reg':'login')}
+var dp=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;$('inst').classList.remove('hide')});
+function install(){if(dp){dp.prompt();dp=null;$('inst').classList.add('hide')}}
+document.addEventListener('input',function(e){if(e.target.form===F())render()});
+document.addEventListener('change',function(e){if(e.target.form===F())render()});
+setLang(ld('wb_lang',0));
+</script>
+</body>
+</html>
